@@ -1,0 +1,6 @@
+#ifndef WORLD_HPP_INCLUDED
+#define WORLD_HPP_INCLUDED
+
+
+
+#endif // WORLD_HPP_INCLUDED

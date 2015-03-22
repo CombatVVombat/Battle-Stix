@@ -1,0 +1,6 @@
+D:/Programming/Libraries/Build/SFML-2.2/src/SFML/Audio/CMakeFiles/sfml-audio.dir
+D:/Programming/Libraries/Build/SFML-2.2/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
+D:/Programming/Libraries/Build/SFML-2.2/src/SFML/Main/CMakeFiles/sfml-main.dir
+D:/Programming/Libraries/Build/SFML-2.2/src/SFML/Network/CMakeFiles/sfml-network.dir
+D:/Programming/Libraries/Build/SFML-2.2/src/SFML/System/CMakeFiles/sfml-system.dir
+D:/Programming/Libraries/Build/SFML-2.2/src/SFML/Window/CMakeFiles/sfml-window.dir
