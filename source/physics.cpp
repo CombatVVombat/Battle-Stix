@@ -10,20 +10,27 @@ bs::Physics::Physics(std::unique_ptr<bs::Integrator> integrator)
 {
 }
 
+void bs::Physics::applyForce(const uint32_t index, const sf::Vector2f &force, const sf::Vector2f &position)
+{
+    _physicsBodys[index].applyForce(force, position);
+}
+
 void bs::Physics::update(const float dt)
 {
     for(StorageListType::iterator it = _physicsBodys.begin(); it != _physicsBodys.end(); ++it)
     {
-        it->state = _integrator->integrate(it->state, dt);
+        it->updateAccel(dt);
+        it->_state = _integrator->integrate(it->_state, dt);
+        it->resetForce();
     }
 }
 
 void bs::Physics::createBody()
 {
-    _physicsBodys.push_back( bs::RigidBody() );
+    _physicsBodys.push_back( bs::physics::RigidBody() );
 }
 
 void bs::Physics::forcePosition(const uint32_t index, const sf::Vector2f &position)
 {
-    _physicsBodys[index].state.p = position;
+    _physicsBodys[index]._state._p = position;
 }

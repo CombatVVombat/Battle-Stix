@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1427051548 source:d:\programming\localgit\battle stix\source\main.cpp
+1427059751 source:d:\programming\localgit\battle stix\source\main.cpp
 	<random>
 	"clock.hpp"
 	"overlay.hpp"
@@ -386,10 +386,10 @@
 
 1426729025 d:\programming\localgit\battle stix\include\world.hpp
 
-1427048259 source:d:\programming\localgit\battle stix\source\physics.cpp
+1427058388 source:d:\programming\localgit\battle stix\source\physics.cpp
 	"physics.hpp"
 
-1427048224 d:\programming\localgit\battle stix\include\physics.hpp
+1427057883 d:\programming\localgit\battle stix\include\physics.hpp
 	<memory>
 	<vector>
 	"euler.hpp"
@@ -407,22 +407,23 @@
 1426814957 d:\programming\localgit\battle stix\include\timer.hpp
 	<SFML/System.hpp>
 
-1426818857 d:\programming\localgit\battle stix\include\rigidbody.hpp
+1427058382 d:\programming\localgit\battle stix\include\rigidbody.hpp
+	"massproperties.hpp"
 	"state.hpp"
 
-1426816230 source:d:\programming\localgit\battle stix\source\rigidbody.cpp
+1427058757 source:d:\programming\localgit\battle stix\source\rigidbody.cpp
 	"rigidbody.hpp"
 
 1426816531 source:d:\programming\localgit\battle stix\source\integrator.cpp
 	"integrator.hpp"
 
-1426818631 d:\programming\localgit\battle stix\include\integrator.hpp
+1427055541 d:\programming\localgit\battle stix\include\integrator.hpp
 	"state.hpp"
 
-1427048257 d:\programming\localgit\battle stix\include\state.hpp
+1427058522 d:\programming\localgit\battle stix\include\state.hpp
 	<SFML/System.hpp>
 
-1427048245 source:d:\programming\localgit\battle stix\source\euler.cpp
+1427058634 source:d:\programming\localgit\battle stix\source\euler.cpp
 	"euler.hpp"
 
 1426818592 d:\programming\localgit\battle stix\include\euler.hpp
@@ -431,9 +432,19 @@
 1426817357 source:d:\programming\localgit\battle stix\source\state.cpp
 	"state.hpp"
 
-1427052534 d:\programming\localgit\battle stix\include\overlay.hpp
+1427059919 d:\programming\localgit\battle stix\include\overlay.hpp
 	<SFML/Graphics.hpp>
 
 1427052579 source:d:\programming\localgit\battle stix\source\overlay.cpp
 	"overlay.hpp"
+
+1427055514 source:d:\programming\localgit\battle stix\source\mass.cpp
+	"mass.hpp"
+
+1427055523 d:\programming\localgit\battle stix\include\mass.hpp
+
+1427058578 d:\programming\localgit\battle stix\include\massproperties.hpp
+
+1427058613 source:d:\programming\localgit\battle stix\source\massproperties.cpp
+	"massproperties.hpp"
 

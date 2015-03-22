@@ -18,8 +18,8 @@ namespace bs
         sf::Font _font;
         textBucket _texts;
         uint32_t _qty;
-        static const uint32_t _topOffset = 10;
-        static const uint32_t _leftOffset = 10;
+        static const uint32_t _topOffset = 0;
+        static const uint32_t _leftOffset = 0;
         static const uint32_t _rowSpacing = 20;
         static const uint32_t _columnSpacing = 200;
 

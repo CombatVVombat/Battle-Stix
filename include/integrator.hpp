@@ -9,6 +9,8 @@ namespace bs
     {
     public:
         virtual bs::physics::State integrate(const bs::physics::State &initial, const float dt) = 0;
+
+    private:
     };
 }
 

@@ -3,9 +3,10 @@
 State bs::Euler::integrate(const State &initial, const float dt)
 {
     State state = initial;
-    state.a = sf::Vector2f(0.0f, 50.0f);
-    state.v += state.a * dt;
-    state.p += state.v * dt;
+    state._v += state._a * dt;
+    state._p += state._v * dt;
+
+    state._theta += state._w * dt;
 
     return state;
 }

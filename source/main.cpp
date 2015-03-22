@@ -7,9 +7,10 @@
 
 int main()
 {
-    uint32_t objectCount = 150;  // very temporary
+    uint32_t objectCount = 100;  // very temporary
     std::default_random_engine randomEngine;
-    std::normal_distribution<float> distribution(0.0f, 300.0f);
+    std::normal_distribution<float> distribution(300.0f, 300.0f);
+    std::normal_distribution<float> dist(-10.0f, 10.0f);
 
     bs::Clock mainClock;
     bs::Clock innerClock;
@@ -39,7 +40,6 @@ int main()
         sprites.push_back(sprite);
     }
 
-
     bs::Window window(sf::VideoMode(800,600), "Battle Stix");
 
     while(window.isOpen())
@@ -56,7 +56,11 @@ int main()
 
             for(unsigned int i = 0; i < objectCount; ++i)
             {
-                sprites[i].setPosition(physics._physicsBodys[i].state.p);
+                physics.applyForce(i, sf::Vector2f(dist(randomEngine), 0), sf::Vector2f(0, dist(randomEngine)));
+                physics.applyForce(i, sf::Vector2f(-dist(randomEngine), 0), sf::Vector2f(0, -dist(randomEngine)));
+
+                sprites[i].setRotation(physics._physicsBodys[i]._state._theta);
+                sprites[i].setPosition(physics._physicsBodys[i]._state._p);
             }
             overlay.updateItem(0, "Frame Time: " + std::to_string(mainClock.delta.asMicroseconds()) + " us");
             overlay.updateItem(1, "Total Time: " + std::to_string(mainClock.getTimeAlive().asSeconds()) + " seconds");

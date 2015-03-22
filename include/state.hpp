@@ -10,10 +10,20 @@ namespace bs
         class State
         {
         public:
-            sf::Vector2f p;
-            sf::Vector2f v;
-            sf::Vector2f a;
+            sf::Vector2f _p;
+            sf::Vector2f _v;
+            sf::Vector2f _a;
+            float _theta;   // angle
+            float _w;       // angular velocity
+            float _L;       // angular momentum
         };
+
+        /*class Derivative
+        {
+        public:
+            sf::Vector2f _dpdt;
+            sf::Vector2f _dvdt;
+        };*/
     }
 }
 

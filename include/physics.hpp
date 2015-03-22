@@ -6,7 +6,7 @@
 #include "euler.hpp"
 #include "rigidbody.hpp"
 
-typedef std::vector<bs::RigidBody> StorageListType;
+typedef std::vector<bs::physics::RigidBody> StorageListType;
 
 namespace bs
 {
@@ -15,6 +15,7 @@ namespace bs
     public:
         Physics();  // uses default Euler integrator
         Physics(std::unique_ptr<Integrator> integrator);
+        void applyForce(const uint32_t index, const sf::Vector2f &force, const sf::Vector2f &position);
         void update(const float dt);
         void createBody();
         void forcePosition(const uint32_t index, const sf::Vector2f &position);
