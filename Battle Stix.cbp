@@ -51,6 +51,8 @@
 		</Compiler>
 		<Unit filename="include/clock.hpp" />
 		<Unit filename="include/control.hpp" />
+		<Unit filename="include/conversions.hpp" />
+		<Unit filename="include/drawablevector.hpp" />
 		<Unit filename="include/euler.hpp" />
 		<Unit filename="include/graphics.hpp" />
 		<Unit filename="include/integrator.hpp" />
@@ -61,10 +63,13 @@
 		<Unit filename="include/scene.hpp" />
 		<Unit filename="include/state.hpp" />
 		<Unit filename="include/timer.hpp" />
+		<Unit filename="include/vector2f.hpp" />
 		<Unit filename="include/window.hpp" />
 		<Unit filename="include/world.hpp" />
 		<Unit filename="source/clock.cpp" />
 		<Unit filename="source/control.cpp" />
+		<Unit filename="source/conversions.cpp" />
+		<Unit filename="source/drawablevector.cpp" />
 		<Unit filename="source/euler.cpp" />
 		<Unit filename="source/graphics.cpp" />
 		<Unit filename="source/main.cpp" />
@@ -75,6 +80,7 @@
 		<Unit filename="source/scene.cpp" />
 		<Unit filename="source/state.cpp" />
 		<Unit filename="source/timer.cpp" />
+		<Unit filename="source/vector2f.cpp" />
 		<Unit filename="source/window.cpp" />
 		<Unit filename="source/world.cpp" />
 		<Extensions>

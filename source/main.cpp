@@ -1,16 +1,17 @@
 #include <random>
 #include "clock.hpp"
+#include "drawablevector.hpp"
 #include "overlay.hpp"
 #include "physics.hpp"
 #include "timer.hpp"
+#include "vector2f.hpp"
 #include "window.hpp"
 
 int main()
 {
-    uint32_t objectCount = 100;  // very temporary
-    std::default_random_engine randomEngine;
-    std::normal_distribution<float> distribution(300.0f, 300.0f);
-    std::normal_distribution<float> dist(-10.0f, 10.0f);
+    // Much Temporary Stuff, very much wooooo
+    bs::Vector2f windowSize = sf::Vector2f(800.0f, 600.0f);
+    uint32_t objectCount = 1;
 
     bs::Clock mainClock;
     bs::Clock innerClock;
@@ -23,6 +24,9 @@ int main()
     overlay.addItem("Update Rate: ");
 
     bs::Physics physics;
+    bs::DrawableVector debugVectors;
+    debugVectors.add(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(0.0f, 0.0f), sf::Color::White);
+    debugVectors.add(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(0.0f, 0.0f), sf::Color::White);
 
     sf::Texture texture;
     if(!texture.loadFromFile("resources/textures/mrplatform.png"))
@@ -33,14 +37,17 @@ int main()
     for(unsigned int i = 0; i < objectCount; ++i)
     {
         physics.createBody();
-        physics.forcePosition(i, sf::Vector2f(distribution(randomEngine), distribution(randomEngine)) );
+        physics.forcePosition(i, sf::Vector2f(0.0f,0.0f));
         sf::Sprite sprite;
         sprite.setTexture(texture);
+        sprite.setScale(1.0f, -1.0f);
         sprite.setOrigin(32,32);
         sprites.push_back(sprite);
     }
 
-    bs::Window window(sf::VideoMode(800,600), "Battle Stix");
+    bs::Window window(sf::VideoMode(windowSize.x,windowSize.y), "Battle Stix");
+    sf::View view(sf::Vector2f(0.0f, 0.0f), sf::Vector2f(windowSize.x, -windowSize.y));
+    sf::View screen(windowSize/2.0f, windowSize);
 
     while(window.isOpen())
     {
@@ -56,12 +63,14 @@ int main()
 
             for(unsigned int i = 0; i < objectCount; ++i)
             {
-                physics.applyForce(i, sf::Vector2f(dist(randomEngine), 0), sf::Vector2f(0, dist(randomEngine)));
-                physics.applyForce(i, sf::Vector2f(-dist(randomEngine), 0), sf::Vector2f(0, -dist(randomEngine)));
-
+                physics.applyForce(i, sf::Vector2f(0.0f, -9.8f), sf::Vector2f(16.0f, 0.0f));
+                physics.applyForce(i, sf::Vector2f(0.0f, 9.8f), sf::Vector2f(-16.0f, 0.0f));
                 sprites[i].setRotation(physics._physicsBodys[i]._state._theta);
                 sprites[i].setPosition(physics._physicsBodys[i]._state._p);
             }
+            debugVectors.update(0, physics._physicsBodys[0]._state._p + sf::Vector2f(16.0f, 0.0f), sf::Vector2f(0.0f, -98.0f), sf::Color::White);
+            debugVectors.update(1, physics._physicsBodys[0]._state._p + sf::Vector2f(-16.0f, 0.0f), sf::Vector2f(0.0f, 98.0f), sf::Color::White);
+
             overlay.updateItem(0, "Frame Time: " + std::to_string(mainClock.delta.asMicroseconds()) + " us");
             overlay.updateItem(1, "Total Time: " + std::to_string(mainClock.getTimeAlive().asSeconds()) + " seconds");
             overlay.updateItem(2, "Update Rate: " + std::to_string( 1.0f / innerClock.delta.asSeconds() ) + " hz");
@@ -69,8 +78,11 @@ int main()
 
         window.handleEvents();
         window.clear(sf::Color::Black);
+        window.setView(view);
         for(unsigned int i = 0; i < objectCount; ++i)
             window.draw(sprites[i]);
+        window.draw(debugVectors);
+        window.setView(screen);
         window.draw(overlay);
         window.display();
     }

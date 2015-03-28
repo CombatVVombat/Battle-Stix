@@ -5,7 +5,7 @@ void bs::physics::RigidBody::applyForce(const sf::Vector2f &force, const sf::Vec
     /// Force direction is given in world coordinates
     /// Position is relative to center of mass and given in world coordinates
     _force += force;
-    _torque += position.x * force.y - position.y * force.x;
+    _torque += bs::cross(position, force);
 }
 
 void bs::physics::RigidBody::resetForce()

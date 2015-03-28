@@ -1,7 +1,7 @@
 #ifndef STATE_HPP_INCLUDED
 #define STATE_HPP_INCLUDED
 
-#include <SFML/System.hpp>
+#include "vector2f.hpp"
 
 namespace bs
 {

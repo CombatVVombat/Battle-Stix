@@ -1,10 +1,12 @@
 # depslib dependency file v1.0
-1427059751 source:d:\programming\localgit\battle stix\source\main.cpp
+1427333970 source:d:\programming\localgit\battle stix\source\main.cpp
 	<random>
 	"clock.hpp"
+	"drawablevector.hpp"
 	"overlay.hpp"
 	"physics.hpp"
 	"timer.hpp"
+	"vector2f.hpp"
 	"window.hpp"
 
 1417948542 d:\programming\localgit\battle stix\include\sfml\graphics.hpp
@@ -407,11 +409,11 @@
 1426814957 d:\programming\localgit\battle stix\include\timer.hpp
 	<SFML/System.hpp>
 
-1427058382 d:\programming\localgit\battle stix\include\rigidbody.hpp
+1427324511 d:\programming\localgit\battle stix\include\rigidbody.hpp
 	"massproperties.hpp"
 	"state.hpp"
 
-1427058757 source:d:\programming\localgit\battle stix\source\rigidbody.cpp
+1427334199 source:d:\programming\localgit\battle stix\source\rigidbody.cpp
 	"rigidbody.hpp"
 
 1426816531 source:d:\programming\localgit\battle stix\source\integrator.cpp
@@ -420,8 +422,8 @@
 1427055541 d:\programming\localgit\battle stix\include\integrator.hpp
 	"state.hpp"
 
-1427058522 d:\programming\localgit\battle stix\include\state.hpp
-	<SFML/System.hpp>
+1427324613 d:\programming\localgit\battle stix\include\state.hpp
+	"vector2f.hpp"
 
 1427058634 source:d:\programming\localgit\battle stix\source\euler.cpp
 	"euler.hpp"
@@ -447,4 +449,30 @@
 
 1427058613 source:d:\programming\localgit\battle stix\source\massproperties.cpp
 	"massproperties.hpp"
+
+1427323372 d:\programming\localgit\battle stix\include\vectormath.hpp
+	<SFML/System.hpp>
+
+1427323689 source:d:\programming\localgit\battle stix\source\vectormath.cpp
+	"vectormath.hpp"
+
+1427333784 d:\programming\localgit\battle stix\include\vector2f.hpp
+	<cmath>
+	<SFML/system.hpp>
+
+1427334255 source:d:\programming\localgit\battle stix\source\vector2f.cpp
+	"vector2f.hpp"
+
+1427333153 source:d:\programming\localgit\battle stix\source\drawablevector.cpp
+	"drawablevector.hpp"
+
+1427332239 d:\programming\localgit\battle stix\include\drawablevector.hpp
+	<SFML/Graphics.hpp>
+	"conversions.hpp"
+	"vector2f.hpp"
+
+1427330554 d:\programming\localgit\battle stix\include\conversions.hpp
+
+1427330540 source:d:\programming\localgit\battle stix\source\conversions.cpp
+	"conversions.hpp"
 
